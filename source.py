@@ -42,21 +42,39 @@ def calculate_fantasy_points(player):
         score += player.rushing_twoptm * 2
         #negatives
         score += player.passing_ints * (-2)
+    else:
+        score = "Defense"
 
     return score
 
 
+def create_dict_points(players):
+    """
+    :param players: A list of NFLGAME player class
+    :return: A dictionary of players, and their respective fantasy points
+    """
+
+    output = {}
+    for p in players:
+        output[p.name] = calculate_fantasy_points(p)
+    return output
+
+def print_players(players):
+    """
+    :param players: Dictionary of players and their fantasy points.
+    :return: None
+    """
+    for key, value in players.iteritems():
+        if value != 0:
+            print key, value
+            
+
 # All the games week 1, of the 2013 season.
 games = nflgame.games(2013, week=15)
-
-# Combining into a list of players
 players = nflgame.combine_game_stats(games)
 
-output = {}
-for p in players:
-    output[p.name] = calculate_fantasy_points(p)
-    if p.name == 'P.Manning':
-        print p.first
+out = create_dict_points(players)
+print_players(out)
 
 
 
