@@ -15,7 +15,7 @@ game_weeks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]
 # Seasons 2010-2016
 years = [2010,2011,2012,2013,2014,2015,2016,2017]
 
-my_csv = open("top_players_weekly.csv","a")
+my_csv = open("top_players.csv","a")
 # define table features
 #my_csv.write("player,position,team,week,year,passing_td,passing_yd,perc_throws,rushing_td,rushing_yd,rec_td,rec_yd,receptions,fgmd,fgyd,perc_fg,tackles,sacks,ints\n")
 
@@ -110,7 +110,7 @@ def calculate_def_score(player):
             6. fumbles_rcv
             7. fumbles_trcv
 
-        Standard scoring for kicking:
+        Standard scoring for defense:
             Solo tackle: 1pt
             Assisted tackle: 0.5pt
             Each sack: 2pts
@@ -304,20 +304,20 @@ def get_top_player(week, year, position):
 
 def main():
     top_players = []
-    for year in years:
-        for week in game_weeks:
+    #for year in years:
+        #for week in game_weeks:
             # top_players.append(get_top_player(game_weeks,year,'QB'))
             # top_players.append(get_top_player(game_weeks, year, 'RB'))
             # top_players.append(get_top_player(game_weeks, year, 'WR'))
             # top_players.append(get_top_player(game_weeks, year, 'TE'))
             # top_players.append(get_top_player(game_weeks, year, 'K'))
             # top_players.append(get_top_player(game_weeks,year,'DEF'))
-            top_players.append(get_top_player(week, year, 'QB'))
-            top_players.append(get_top_player(week, year, 'RB'))
-            top_players.append(get_top_player(week, year, 'WR'))
-            top_players.append(get_top_player(week, year, 'TE'))
-            top_players.append(get_top_player(week, year, 'K'))
-            top_players.append(get_top_player(week, year, 'DEF'))
+    top_players.append(get_top_player(game_weeks, 2017, 'QB'))
+    top_players.append(get_top_player(game_weeks, 2017, 'RB'))
+    top_players.append(get_top_player(game_weeks, 2017, 'WR'))
+    top_players.append(get_top_player(game_weeks, 2017, 'TE'))
+    top_players.append(get_top_player(game_weeks, 2017, 'K'))
+    top_players.append(get_top_player(game_weeks, 2017, 'DEF'))
     for dict in top_players:
         for k,v in dict.iteritems():
             print k,v

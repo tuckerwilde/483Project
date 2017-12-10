@@ -1,5 +1,5 @@
 player,position,team,week,year,passing_td,passing_yd,perc_throws,rushing_td,rushing_yd,rec_td,rec_yd,receptions,fgmd,fgyd,perc_fg,tackles,sacks,ints
-T.Brady,QB,STL,ALL,2010,36,3900,65.85365854,0,0,0,0,0,0,0,0,0,0,0
+T.Brady,QB,NE,ALL,2010,36,3900,65.85365854,0,0,0,0,0,0,0,0,0,0,0
 A.Foster,RB,HOU,ALL,2010,0,0,0,16,1614,0,0,0,0,0,0,0,0,0
 A.Johnson,WR,HOU,ALL,2010,0,0,0,0,0,8,1216,86,0,0,0,0,0,0
 J.Witten,TE,DAL,ALL,2010,0,0,0,0,0,9,1002,94,0,0,0,0,0,0
@@ -41,3 +41,9 @@ A.Brown,WR,PIT,ALL,2016,0,0,0,0,0,12,1284,106,0,0,0,0,0,0
 T.Kelce,TE,KC,ALL,2016,0,0,0,0,0,4,1125,85,0,0,0,0,0,0
 J.Tucker,K,BAL,ALL,2016,0,0,0,0,0,0,0,0,38,745,100,0,0,0
 B.Wagner,MLB,SEA,ALL,2016,0,0,0,0,0,0,0,0,0,0,0,87,4.5,1
+R.Wilson,QB,NYG,ALL,2017,21,2801,62.5994695,0,0,0,0,0,0,0,0,0,0,0
+T.Gurley,RB,LA,ALL,2017,0,0,0,8,791,0,0,0,0,0,0,0,0,0
+A.Brown,WR,PIT,ALL,2017,0,0,0,0,0,6,1026,70,0,0,0,0,0,0
+T.Kelce,TE,KC,ALL,2017,0,0,0,0,0,5,738,59,0,0,0,0,0,0
+G.Zuerlein,K,LA,ALL,2017,0,0,0,0,0,0,0,0,28,428,96.55172414,0,0,0
+C.Mosley,ILB,BAL,ALL,2017,0,0,0,0,0,0,0,0,0,0,0,64,1,2
