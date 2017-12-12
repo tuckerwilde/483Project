@@ -1,4 +1,11 @@
 import nflgame
+import csv
+
+################ WHAT DO I WANT TO DO? ################
+# 1. Explore top paid players vs. top performing players.
+#   1.1 How to do that? First, start with the receivers, are there any of the top 50 players being played in the top receivers?
+
+
 
 # Test File to see if we can print out the top fantasy scorers
 # for the week 1, 2013.
@@ -42,8 +49,6 @@ def calculate_fantasy_points(player):
         score += player.rushing_twoptm * 2
         #negatives
         score += player.passing_ints * (-2)
-    else:
-        score = "Defense"
 
     return score
 
@@ -56,7 +61,7 @@ def create_dict_points(players):
 
     output = {}
     for p in players:
-        output[p.name] = calculate_fantasy_points(p)
+        output[p.name] = [calculate_fantasy_points(p)]
     return output
 
 def print_players(players):
@@ -66,17 +71,23 @@ def print_players(players):
     """
     for key, value in players.iteritems():
         if value != 0:
-            print key, value
-            
+            if len(value) == 2:
+                print key, value
+
 
 # All the games week 1, of the 2013 season.
-games = nflgame.games(2013, week=15)
-players = nflgame.combine_game_stats(games)
+games = nflgame.games(2015)
+players = nflgame.combine(games, plays=True)
+out = create_dict_points(players.sort('receiving_tar').limit(50))
+#print_players(out)
 
-out = create_dict_points(players)
+with open('salaries2016.csv','rU') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        if row[0] in out:
+            out[row[0]].append(row[1])
+
+
 print_players(out)
-
-
-
 
 
